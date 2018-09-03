@@ -10,10 +10,11 @@
 1. [Introdução](https://docs.google.com/presentation/d/1f4kWTk57WeteDIoKUyawTjw-JxUlntcGDvmTEds4wLY/edit?usp=sharing)
 1. [Hyper Text Markup Language (HTML)](https://docs.google.com/presentation/d/1xiswgCKIrJhEs0_yhHl0prcaYT1dzCTFkZKZpsD4eg4/edit?usp=sharing)
 1. [Cascading Style Sheets (CSS)](https://docs.google.com/presentation/d/1uaS0qbJ7mr5XErmv7YxuZXR3Lkoqb-diLdKwwzlttK8/edit?usp=sharing)
+    + CSS Responsivo
 1. JavaScript (JS)
-    1. JavaScript Object Notation (JSON)
+    + JavaScript Object Notation (JSON)
 1. Frameworks e Bibliotecas
-    1. Asynchronous JavaScript And XML (AJAX)
+    + Asynchronous JavaScript And XML (AJAX)
 
 ## Trabalhos
 
