@@ -11,7 +11,7 @@ btnEntrar.addEventListener('click', () => {
 async function entrar(email, senha) {
     try {
         const basicToken = 'Basic ' + btoa(email + ':' + senha);
-        const response = await fetch('http://localhost:8080/api/usuarios/eu', {  
+        const response = await fetch('http://localhost:8081/api/usuarios/eu', {  
             method: 'GET',  
             headers: {
                 'Content-Type': 'application/json',
@@ -19,8 +19,9 @@ async function entrar(email, senha) {
             }
         });
         if (response.ok) {
-            alert('Autenticado com sucesso!');
-            // TODO: Aramazenar o Basic Token...
+            const usuarioLogado = await response.json();
+            alert(usuarioLogado.nome + ' autenticado com sucesso!');
+            // TODO: Armazenar o Basic Token...
         } else {
             alert('Erro inesperado!');
         }
