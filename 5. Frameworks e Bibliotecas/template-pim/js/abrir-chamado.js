@@ -8,7 +8,9 @@ saudacao.innerHTML =  `Ola ${usuarioLogado.nome}!`;
 
 btnAbrirChamado.addEventListener('click', () => {
     const chamado = {
-        idUsuario: usuarioLogado.id,
+        cliente: {
+            id: usuarioLogado.id
+        },
         titulo: txtTitulo.value,
         descricao: txtDescricao.value
     }
@@ -28,9 +30,10 @@ async function abrirChamado(chamado) {
         if (response.ok) {
             alert('Chamado aberto com sucesso!');
         } else {
-            alert('Erro inesperado!');
+            const error = await response.json();
+            alert(error.mensagem);
         }
     } catch(error) {
-        alert(error);          
+        alert(error);
     }
 }
