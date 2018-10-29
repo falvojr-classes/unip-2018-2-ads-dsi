@@ -31,9 +31,9 @@ async function abrirChamado(chamado) {
             alert('Chamado aberto com sucesso!');
         } else {
             const error = await response.json();
-            alert(error.mensagem);
+            alert(error.message);
         }
     } catch(error) {
-        alert(error);
+        alert('Ocorreu um erro inesperado!');    
     }
 }

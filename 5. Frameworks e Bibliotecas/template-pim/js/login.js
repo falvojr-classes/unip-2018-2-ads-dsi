@@ -29,9 +29,10 @@ async function entrar(email, senha) {
             // TODO Identificar tipo de usuário
             location.href = "abrir-chamado.html";
         } else {
-            alert('Erro inesperado!');
+            const error = await response.json();
+            alert(error.message);
         }
     } catch(error) {
-        alert(error);          
+        alert('Ocorreu um erro inesperado!');         
     }
 }

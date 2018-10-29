@@ -1,3 +1,5 @@
+const body = document.getElementById('corpo');
+
 buscarChamados();
 
 async function buscarChamados() {
@@ -11,11 +13,38 @@ async function buscarChamados() {
         });
         if (response.ok) {
             const chamados = await response.json();
-            // TODO Criar a lista de chamados no HTML (dinamicamente)
+            
+            for (i = 0; i < chamados.length; i++) {
+                const chamado = chamados[i];
+
+                const linha = document.createElement('div');
+                linha.classList.add('row');
+
+                const colunaTitulo = criarColunaTextual(chamado.titulo, 'col-2');
+                const colunaDescricao = criarColunaTextual(chamado.descricao, 'col-6');
+                const colunaStatus = criarColunaTextual(chamado.status, 'col-2');
+                const colunaInicio = criarColunaTextual(chamado.abertura, 'col-2');
+
+                linha.appendChild(colunaTitulo);
+                linha.appendChild(colunaDescricao);
+                linha.appendChild(colunaStatus);
+                linha.appendChild(colunaInicio);
+
+                body.appendChild(linha);
+            }
+            
         } else {
-            alert('Erro inesperado!');
+            const error = await response.json();
+            alert(error.message);
         }
     } catch(error) {
-        alert(error);          
+        alert('Ocorreu um erro inesperado!');     
+    }
+
+    function criarColunaTextual(value, cssClass) {
+        const coluna = document.createElement('div');
+        coluna.classList.add(cssClass);
+        coluna.innerHTML = value;
+        return coluna;
     }
 }

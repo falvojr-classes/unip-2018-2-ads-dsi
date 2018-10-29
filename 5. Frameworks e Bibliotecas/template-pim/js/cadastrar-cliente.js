@@ -1,5 +1,4 @@
 const txtNome = document.getElementById('txtNome');
-const txtMatricula = document.getElementById('txtMatricula');
 const txtEmail = document.getElementById('txtEmail');
 const txtSenha = document.getElementById('txtSenha');
 const txtConfirmarSenha = document.getElementById('txtConfirmarSenha');
@@ -9,27 +8,26 @@ btnCadastrar.addEventListener('click', () => {
     if(txtSenha.value != txtConfirmarSenha.value) {
         alert("As senhas devem ser iguais!");
     } else {
-        const funcionario = {
+        const cliente = {
             nome: txtNome.value,
             email: txtEmail.value,
-            senha: txtSenha.value,
-            matricula: txtMatricula.value
+            senha: txtSenha.value
         }
-        cadastrar(funcionario);
+        cadastrar(cliente);
     }
 });
 
-async function cadastrar(funcionario) {
+async function cadastrar(cliente) {
     try {
-        const response = await fetch('http://localhost:8080/api/funcionarios', {  
+        const response = await fetch('http://localhost:8080/api/clientes', {  
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(funcionario)
+            body: JSON.stringify(cliente)
         });
         if (response.ok) {
-            alert('Funcionario cadastrado com sucesso!');
+            alert('Cliente cadastrado com sucesso!');
         } else {
             const error = await response.json();
             alert(error.message);
