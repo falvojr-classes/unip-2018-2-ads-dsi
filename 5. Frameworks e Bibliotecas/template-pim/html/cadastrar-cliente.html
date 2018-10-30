@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>UNIP</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../css/dsi.css"/>
+</head>
+<body>
+  <h1 class="center">Cadastrar Cliente</h1>
+  <div class="row">
+    <div class="col-3"></div>
+    <div id="cadastro" class="col-6">
+      <form>
+        <div class="row">
+          <div class="col-2">
+            <label for="txtNome">Nome</label>
+          </div>
+          <div class="col-10">
+            <input id="txtNome" type="text" name="nome" required/>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-2">
+            <label for="txtEmail">Email</label>
+          </div>
+          <div class="col-10">
+            <input id="txtEmail" type="email" name="email" required />
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+              <label for="txtSenha">Senha</label>
+            </div>
+            <div class="col-3">
+              <input id="txtSenha" type="password" name="senha" required/>
+            </div>
+            <div class="col-4 center">
+              <label for="txtConfirmarSenha">Confirmar Senha</label>
+            </div>
+            <div class="col-3">
+              <input id="txtConfirmarSenha" type="password" name="confirmarSenha" required/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+              <label for="txtEndereco">Endereco</label>
+            </div>
+            <div class="col-10">
+              <input id="txtEndereco" type="text" name="endereco" required/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+              <label for="txtBairro">Bairro</label>
+            </div>
+            <div class="col-4">
+              <input id="txtBairro" type="text" name="bairro" required/>
+            </div>
+            <div class="col-2 center">
+              <label for="txtCEP">CEP</label>
+            </div>
+            <div class="col-4">
+              <input id="txtCEP" type="text" name="cep" required/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <label for="txtCidade">Cidade</label>
+              </div>
+              <div class="col-6">
+                <input id="txtCidade" type="text" name="cidade" required/>
+              </div>
+              <div class="col-2 center">
+                <label for="txtEstado">Estado</label>
+              </div>
+              <div class="col-2">
+                <input id="txtEstado" type="text" name="estado" required/>
+              </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <label for="txtTelefone">Telefone</label>
+              </div>
+              <div class="col-10">
+                <input id="txtTelefone" type="text" name="telefone" required/>
+              </div>
+        </div>
+        <div class="row">
+          <button id="btnCadastrar" type="button">CADASTRAR</button>
+        </div>
+      </form>
+    </div>
+    <div class="col-3"></div>
+  </div>
+  <script src="../js/cadastrar-cliente.js"></script>
+</body>
+</html>

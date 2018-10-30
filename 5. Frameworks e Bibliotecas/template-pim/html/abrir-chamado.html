@@ -3,37 +3,38 @@
 <head>
 <title>UNIP</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="css/dsi.css"/>
+<link rel="stylesheet" href="../css/dsi.css"/>
 </head>
 <body>
+  <h1 class="center">Abertura de Chamado</h1>
   <div class="row">
     <div class="col-3"></div>
-    <div id="login" class="col-6">
+    <div class="col-6">
       <form>
-        <h1 class="center">Login</h1>
+        <h4 id="saudacao"></h4>
         <div class="row">
           <div class="col-2">
-            <label for="idEmail">Email</label>
+            <label for="txtTitulo">Titulo:</label>
           </div>
           <div class="col-10">
-            <input id="txtEmail" type="email" name="email" placeholder="Seu email aqui..." />
+            <input id="txtTitulo" type="text" name="titulo" />
           </div>
         </div>
         <div class="row">
             <div class="col-2">
-              <label for="idSenha">Senha</label>
+                <label for="txtDescricao">Descricao:</label>
             </div>
             <div class="col-10">
-              <input id="txtSenha" type="password" name="senha" placeholder="Sua senha aqui..." />
+              <textarea id="txtDescricao" name="descricao" rows="4"></textarea>
             </div>
         </div>
         <div class="row">
-          <button id="btnEntrar" type="button">ENTRAR</button>
+          <button id="btnAbrirChamado" type="button">ABRIR CHAMADO</button>
         </div>
       </form>
     </div>
     <div class="col-3"></div>
   </div>
-  <script src="js/login.js"></script>
+  <script src="../js/abrir-chamado.js"></script>
 </body>
 </html>

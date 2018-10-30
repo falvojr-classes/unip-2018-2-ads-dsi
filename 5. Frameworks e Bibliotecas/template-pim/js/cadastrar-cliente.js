@@ -2,6 +2,12 @@ const txtNome = document.getElementById('txtNome');
 const txtEmail = document.getElementById('txtEmail');
 const txtSenha = document.getElementById('txtSenha');
 const txtConfirmarSenha = document.getElementById('txtConfirmarSenha');
+const txtEndereco = document.getElementById('txtEndereco');
+const txtBairro = document.getElementById('txtBairro');
+const txtCidade = document.getElementById('txtCidade');
+const txtEstado = document.getElementById('txtEstado');
+const txtCEP = document.getElementById('txtCEP');
+const txtTelefone = document.getElementById('txtTelefone');
 const btnCadastrar = document.getElementById('btnCadastrar');
 
 btnCadastrar.addEventListener('click', () => {
@@ -11,7 +17,14 @@ btnCadastrar.addEventListener('click', () => {
         const cliente = {
             nome: txtNome.value,
             email: txtEmail.value,
-            senha: txtSenha.value
+            senha: txtSenha.value,
+            senha: txtSenha.value,
+            endereco: txtEndereco.value,
+            bairro: txtBairro.value,
+            cidade: txtCidade.value,
+            estado: txtEstado.value,
+            cep: txtCEP.value,
+            telefone: txtTelefone.value
         }
         cadastrar(cliente);
     }

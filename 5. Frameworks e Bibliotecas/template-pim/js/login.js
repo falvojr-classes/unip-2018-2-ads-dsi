@@ -21,13 +21,15 @@ async function entrar(email, senha) {
         if (response.ok) {
             const usuarioLogado = await response.json();
 
-            // Armazena Token e Usuário logado localmente
+            // Armazena Token e Usuario logado localmente
             localStorage.setItem("token", basicToken);
             localStorage.setItem("usuario", JSON.stringify(usuarioLogado))
             
-            // Redireciona para a página de abrir chamado
-            // TODO Identificar tipo de usuário
-            location.href = "abrir-chamado.html";
+            if(usuarioLogado.funcionario) {
+                location.href = "listar-chamados.html";
+            } else {
+                location.href = "abrir-chamado.html";
+            }
         } else {
             const error = await response.json();
             alert(error.message);
