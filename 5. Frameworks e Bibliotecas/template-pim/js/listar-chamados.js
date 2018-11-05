@@ -17,27 +17,35 @@ async function buscarChamados() {
             for(i = 0; i < chamados.length; i++) {
                 const chamado = chamados[i];
 
-                const row = document.createElement('div');
-                row.classList.add('row');
+                const linha = document.createElement('div');
+                linha.classList.add('row');
 
                 const titulo = criarColunaTextual(chamado.titulo, 'col-2');
-                const cliente = criarColunaTextual(chamado.cliente.nome, 'col-3');
+                const cliente = criarColunaTextual(chamado.cliente.nome, 'col-2');
                 var funcionario;
                 if (chamado.funcionario) {
-                    funcionario = criarColunaTextual(chamado.funcionario.nome, 'col-3');
+                    funcionario = criarColunaTextual(chamado.funcionario.nome, 'col-2');
                 } else {
-                    funcionario = criarColunaTextual('', 'col-3'); 
+                    funcionario = criarColunaTextual('', 'col-2'); 
                 }
                 const status = criarColunaTextual(chamado.status, 'col-2');
                 const inicio = criarColunaTextual(chamado.inicio, 'col-2');
 
-                row.appendChild(titulo);
-                row.appendChild(cliente);
-                row.appendChild(funcionario);
-                row.appendChild(status);
-                row.appendChild(inicio);
+                const editar = document.createElement('div');
+                editar.classList.add('col-2');
+                const linkEditar = document.createElement('a');
+                linkEditar.innerHTML = 'EDITAR';
+                linkEditar.href = `manter-chamado.html?id=${chamado.id}`
+                editar.appendChild(linkEditar);
 
-                body.appendChild(row);
+                linha.appendChild(titulo);
+                linha.appendChild(cliente);
+                linha.appendChild(funcionario);
+                linha.appendChild(status);
+                linha.appendChild(inicio);
+                linha.appendChild(editar);
+
+                body.appendChild(linha);
             }
         } else {
             const error = await response.json();

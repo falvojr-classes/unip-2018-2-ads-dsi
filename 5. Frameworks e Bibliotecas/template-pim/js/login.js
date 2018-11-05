@@ -28,7 +28,7 @@ async function entrar(email, senha) {
             if(usuarioLogado.funcionario) {
                 location.href = "listar-chamados.html";
             } else {
-                location.href = "abrir-chamado.html";
+                location.href = "manter-chamado.html";
             }
         } else {
             const error = await response.json();
