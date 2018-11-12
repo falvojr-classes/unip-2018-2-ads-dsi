@@ -12,10 +12,4 @@
 1. [Cascading Style Sheets (CSS)](https://docs.google.com/presentation/d/1uaS0qbJ7mr5XErmv7YxuZXR3Lkoqb-diLdKwwzlttK8/edit?usp=sharing)
     + [CSS Responsivo](https://docs.google.com/presentation/d/11kqObIiKJBzXU_9iZvkkoICGxPTwXZPE9uaAolvtIik/edit?usp=sharing)
 1. [JavaScript (JS)](https://docs.google.com/presentation/d/1eWflVoXsAFD82lxo0rm6HDCpgrLA3-20932nwqEJ1Fo/edit?usp=sharing)
-    + JavaScript Object Notation (JSON)
-1. Frameworks e Bibliotecas
-    + Asynchronous JavaScript And XML (AJAX)
-
-## Trabalhos
-
-TODO
+1. [Frameworks e Bibliotecas](https://docs.google.com/presentation/d/1Ca6hylig_zHva4u88dmsA92QnYsdRRm680Yr9fLJs5o/edit?usp=sharing)
