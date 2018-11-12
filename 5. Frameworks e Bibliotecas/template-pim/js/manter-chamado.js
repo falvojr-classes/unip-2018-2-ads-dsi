@@ -16,19 +16,29 @@ async function inicializar() {
     if (ehEdicao) {
         txtTitulo.value = chamado.titulo;
         txtDescricao.value = chamado.descricao;
-        txtTitulo.disabled = true;
-        txtDescricao.disabled = true;
 
-        if (chamado.status == 'ABERTO') {
-            btnAcao.innerHTML = 'INICIAR';
-        } else if (chamado.status == 'EM_ANDAMENTO') {
-            btnAcao.innerHTML = 'FINALIZAR';
+        if (usuarioLogado.funcionario) {
+            txtTitulo.disabled = true;
+            txtDescricao.disabled = true;
+
+            if (chamado.status == 'ABERTO') {
+                btnAcao.innerHTML = 'INICIAR';
+            } else if (chamado.status == 'EM_ANDAMENTO') {
+                btnAcao.innerHTML = 'FINALIZAR';
+            } else {
+                btnAcao.style.display = 'none'; 
+            }
+            chamado.funcionario = {
+                id: usuarioLogado.id
+            }
         } else {
-            btnAcao.style.display = 'none'; 
-        }
-
-        chamado.funcionario = {
-            id: usuarioLogado.id
+            if (chamado.status == 'ABERTO') {
+                btnAcao.innerHTML = 'SALVAR';
+            } else {
+                txtTitulo.disabled = true;
+                txtDescricao.disabled = true;
+                btnAcao.style.display = 'none'; 
+            }
         }
     } else {
         btnAcao.innerHTML = 'ABRIR';

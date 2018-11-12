@@ -1,10 +1,29 @@
 const body = document.getElementsByTagName('body')[0];
+const saudacao = document.getElementById('saudacao');
+const usuarioLogado = JSON.parse(localStorage.getItem("usuario"));
+const btnAbrirChamado = document.getElementById('btnAbrirChamado');
 
-buscarChamados();
+inicializar();
+
+function inicializar() {
+    const ehFuncionario = usuarioLogado.funcionario;
+    const tipoUsuario = ehFuncionario ? 'F' : 'C';
+    saudacao.innerHTML =  `Usuario: ${usuarioLogado.nome} (${tipoUsuario})`;
+
+    btnAbrirChamado.style.display = ehFuncionario ? 'none' : 'block';
+    btnAbrirChamado.addEventListener('click', () => {
+        window.location.href = "manter-chamado.html";
+    })
+
+    buscarChamados();
+}
 
 async function buscarChamados() {
     try {
-        const response = await fetch('http://localhost:8080/api/chamados', {  
+        const ehFuncionario = usuarioLogado.funcionario;
+        const id = usuarioLogado.id;
+        const query = ehFuncionario ? `?idFuncionario=${id}` : `?idCliente=${id}`;
+        const response = await fetch(`http://localhost:8080/api/chamados${query}`, {  
             method: 'GET',  
             headers: {
                 'Content-Type': 'application/json',
@@ -32,7 +51,7 @@ async function buscarChamados() {
                 const inicio = criarColunaTextual(chamado.inicio, 'col-2');
 
                 const editar = document.createElement('div');
-                editar.classList.add('col-2');
+                editar.classList.add('col-2', 'center');
                 const linkEditar = document.createElement('a');
                 linkEditar.innerHTML = 'EDITAR';
                 linkEditar.href = `manter-chamado.html?id=${chamado.id}`
@@ -57,7 +76,7 @@ async function buscarChamados() {
 
     function criarColunaTextual(valor, classeCss) {
         const coluna = document.createElement('div');
-        coluna.classList.add(classeCss);
+        coluna.classList.add(classeCss, 'center');
         coluna.innerHTML = valor;
         return coluna;
     }

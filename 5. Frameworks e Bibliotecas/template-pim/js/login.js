@@ -25,11 +25,7 @@ async function entrar(email, senha) {
             localStorage.setItem("token", basicToken);
             localStorage.setItem("usuario", JSON.stringify(usuarioLogado))
             
-            if(usuarioLogado.funcionario) {
-                location.href = "listar-chamados.html";
-            } else {
-                location.href = "manter-chamado.html";
-            }
+            location.href = "listar-chamados.html";
         } else {
             const error = await response.json();
             alert(error.message);
